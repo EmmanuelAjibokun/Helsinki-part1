@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "./Header";
 import Feedback from "./Feedback";
-import Content from "./Content";
+import Statistics from "./Statistics";
 
 function App() {
   // save clicks of each button to its own state
@@ -17,7 +17,7 @@ function App() {
       <Header title={"Give feedback"} heading={'h1'}/>
       <Feedback setProps={setProps} props={props} />
       <Header title={"statistics"} heading={'h2'}/>
-      <Content props={props} />
+      <Statistics props={props} />
     </div>
   )
 }
