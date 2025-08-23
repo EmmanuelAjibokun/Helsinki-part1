@@ -17,7 +17,11 @@ function App() {
       <Header title={"Give feedback"} heading={'h1'}/>
       <Feedback setProps={setProps} props={props} />
       <Header title={"statistics"} heading={'h2'}/>
-      <Statistics props={props} />
+      {
+        good || neutral || bad ? 
+        <Statistics props={props} /> :
+        <div>No feedback given</div>
+      }
     </div>
   )
 }
