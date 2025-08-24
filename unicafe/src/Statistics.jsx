@@ -1,4 +1,4 @@
-import Review from "./Review";
+import StatisticLine from "./StatisticLine";
 
 const Statistics = ({props}) => {
   const {good, neutral, bad} = props;
@@ -8,14 +8,16 @@ const Statistics = ({props}) => {
   const totalScore = (good * 1) + (neutral * 0) + (bad * -1)
   const per = (totalScore / (good * 1)) * 100;
   return (
-    <div>
-      <Review review={good} text={"good"} />
-      <Review review={neutral} text={"neutral"} />
-      <Review review={bad} text={"bad"} />
-      <Review review={total} text={"all"} />
-      <Review review={average} text={"average"} />
-      <Review review={per} text={"positive"} />
-    </div>
+    <table>
+      <tbody>
+        <StatisticLine value={good} text={"good"} />
+        <StatisticLine value={neutral} text={"neutral"} />
+        <StatisticLine value={bad} text={"bad"} />
+        <StatisticLine value={total} text={"all"} />
+        <StatisticLine value={average} text={"average"} />
+        <StatisticLine value={`${per} %`} text={"positive"} />
+      </tbody>
+    </table>
   )
 }
 
